@@ -1,0 +1,9 @@
+pane	0	0	:nvim	1	:*	0	:/Users/liam/dev/fmc-web	1	nvim	:nvim
+pane	0	0	:nvim	1	:*	1	:/Users/liam/dev/fmc-web	0	node	:node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js start:docker
+pane	0	0	:nvim	1	:*	2	:/Users/liam/dev/fmc-web	0	zsh	:
+pane	0	1	:zsh	0	:-Z	0	:/Users/liam/dev/id-selfscan	0	nvim	:nvim
+pane	0	1	:zsh	0	:-Z	1	:/Users/liam/dev/id-selfscan	1	zsh	:
+pane	0	1	:zsh	0	:-Z	2	:/Users/liam/dev/id-selfscan	0	zsh	:
+window	0	0	1	:*	7e7f,238x61,0,0{164x61,0,0,21,73x61,165,0[73x30,165,0,22,73x30,165,31,23]}
+window	0	1	0	:-Z	294c,238x61,0,0{164x61,0,0,1,73x61,165,0[73x30,165,0,7,73x30,165,31,20]}
+state	0	

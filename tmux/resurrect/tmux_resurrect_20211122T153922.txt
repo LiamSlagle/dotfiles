@@ -1,0 +1,8 @@
+pane	0	0	:zsh	0	:-Z	0	:/Users/liam/dev/fmc-web	0	nvim	:nvim
+pane	0	0	:zsh	0	:-Z	1	:/Users/liam/dev/fmc-web	0	node	:node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js start:docker
+pane	0	0	:zsh	0	:-Z	2	:/Users/liam/dev/fmc-web	1	zsh	:
+pane	0	1	:zsh	1	:*	0	:/Users/liam/dev/id-selfscan	0	nvim	:nvim
+pane	0	1	:zsh	1	:*	1	:/Users/liam/dev/id-selfscan/fmc-brand-config-centralization	1	zsh	:
+window	0	0	0	:-Z	893b,238x61,0,0{164x61,0,0,0,73x61,165,0[73x30,165,0,5,73x30,165,31,10]}
+window	0	1	1	:*	f3b9,238x61,0,0{119x61,0,0,1,118x61,120,0,9}
+state	0	
