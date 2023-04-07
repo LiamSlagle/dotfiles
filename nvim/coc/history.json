@@ -1,0 +1,8 @@
+{
+  "commands": {
+    "%2FUsers%2Fliam%2Fdev%2Ffmc-web": [
+      "tsserver.restart",
+      "tsserver.open"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "suggest.enablePreview": true,
+  "suggest.maxCompleteItemCount": 32,
+  "suggest.snippetsSupport": false,
+  "tsserver.log": "verbose",
+  "typescript.autoClosingTags": false,
+  "coc.preferences.jumpCommand": "split",
+  "svelte.enable-ts-plugin": true
+}
