@@ -7,6 +7,7 @@ set undoreload=10000
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set winminheight=0
 set autoindent
+set copyindent
 set nowrap
 set incsearch
 set ignorecase
@@ -41,6 +42,7 @@ let g:svelte_preprocessors = ['typescript']
 " filetypes
 autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 autocmd BufRead,BufNewFile *.jsx set filetype=javascript
+autocmd Filetype json let g:indentLine_setConceal = 0
 
 " easymotion/easyalign
 map <space> <Plug>(easymotion-prefix)
@@ -48,9 +50,6 @@ map <space>s <Plug>(easymotion-sn)
 nmap ga <Plug>(LiveEasyAlign)
 xmap ga <Plug>(LiveEasyAlign)
 let g:move_key_modifier = 'A'
-
-" coc-pairs enter
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm(): "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " fzf
 let g:fzf_colors =
@@ -68,16 +67,16 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1 } }
-"nmap F :Files<CR>
-"nmap B :Buffer<CR>
-"nmap R :Rg<CR>
+nmap F :Files<CR>
+nmap B :Buffers<CR>
+nmap R :Rg<CR>
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
 
 " telescope
-nnoremap F :Telescope find_files<CR>
-nnoremap R :Telescope grep_string search="" only_sort_text=true<CR>
-nnoremap B :Telescope buffers<CR>
+"nnoremap F :Telescope find_files<CR>
+"nnoremap R :Telescope grep_string search="" only_sort_text=true<CR>
+"nnoremap B :Telescope buffers<CR>
 
 " NERDTree
 nnoremap <silent> <expr> <C-t> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : "\:NERDTree<CR>"
@@ -157,6 +156,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 Plug 'matze/vim-move'
 Plug 'yonchu/accelerated-smooth-scroll'
+Plug 'echasnovski/mini.move'
 
 Plug 'epeli/slimux'
 Plug 'janko-m/vim-test'
@@ -187,6 +187,7 @@ call plug#end()
 
 lua << EOF
 local actions = require('telescope.actions')
+require('mini.move').setup()
 require('telescope').setup {
   defaults = {
     vimgrep_arguments = vimgrep_arguments,
@@ -199,6 +200,20 @@ require('telescope').setup {
     },
     file_ignore_patterns = { "yarn.lock", "node_modules" }
   },
+}
+
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {
+    'c', 'cpp', 'dart', 'go', 'html', 'java', 'javascript', 'python', 'ruby',
+    'rust', 'typescript'
+  },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = true
+  },
+  indent = {
+    enable = false
+  }
 }
 EOF
 
